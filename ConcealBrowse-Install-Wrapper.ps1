@@ -20,4 +20,4 @@ $wc.Headers.Add('Accept','application/vnd.github.v3.raw')
 # Set this URL to the script you want to run
 $scriptPath = $wc.DownloadString('https://raw.githubusercontent.com/AlwaysNetworks/DattoRMMScripts/main/ConcealBrowse-Install-Script.ps1')
 
-Invoke-Command -ScriptBlock ([scriptblock]::Create($scriptPath)) -ArgumentList -SiteID $env:SiteID -NoToolbarPin $env:NoToolbarPin -ForceEnable $env:ForceEnable -CompanyID $env:CompanyID
+Invoke-Command -ScriptBlock ([scriptblock]::Create($scriptPath)) -ArgumentList -SiteID $env:SiteID -ForceEnable $env:ForceEnable -CompanyID $env:CompanyID
