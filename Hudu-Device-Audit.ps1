@@ -1,20 +1,11 @@
 # Based on the original script by Kelvin Tegelaar https://github.com/KelvinTegelaar/AutomaticDocumentation
+param($HuduAPIKey,$HuduBaseDomain,$CompanyName)
 #####################################################################
 # Get a Hudu API Key from https://yourhududomain.com/admin/api_keys
 $TableStyling = "<th>", "<th style=`"background-color:#2c3364; color:#ffffff`">"
 # This will be appended to the name of the Asset type this computer is created in Hudu as.
 $HuduAppendedAssetLayoutName = " - Logbook - Autodoc"
 #####################################################################
-Param(
-    [Parameter()]
-    [String]$HuduAPIKey,
-    
-    [Parameter()]
-    [String]$HuduBaseDomain,
-    
-    [Parameter()]
-    [String]$CompanyName
-)
 
 #Get the Hudu API Module if not installed
 if (Get-Module -ListAvailable -Name HuduAPI) {
