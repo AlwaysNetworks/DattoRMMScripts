@@ -15,7 +15,7 @@
 
 $script = 'Hudu-Device-Audit.ps1'
 
-$hash = "4349CFB29CB4542C0AE53F1C3E2841110BE1F4A81BBB7C5EE8B960D6866D7722"
+$hash = "34E8BE71C970C2F60A632B1233B47B22B94D87762605846FDA0620A049C055DE"
 
 $Params = @{
     HuduAPIKey       = $env:HuduAPIKey
@@ -35,4 +35,6 @@ if ((Get-FileHash -Path "./script.ps1" -Algorithm SHA256).Hash -ne $hash) {
     exit 1
 }
 
-Invoke-Expression ". ./script.ps1 @Params"
+Write-Host "Hash matches. Executing script..."
+
+Invoke-Expression "pwsh ./script.ps1 @Params"
